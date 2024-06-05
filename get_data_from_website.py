@@ -1,6 +1,10 @@
 import asyncio
 from pyppeteer import launch
 
+'''
+Gets raw, unfiltered board data from a website
+Given the right URl
+'''
 async def main():
     #url = 'https://www.marketscreener.com/quote/stock/AMAZON-COM-INC-12864605/company/'
     url = "https://www.marketscreener.com/quote/stock/TESLA-INC-6344549/company"
@@ -33,5 +37,5 @@ async def get_shareholders(url):
     await browser.close()
     return result #Returns all the text in "Members of the Board" section, which includes stuff like names, but also stuff like pay
 
-asyncio.run(main())
+#asyncio.run(main())
 
