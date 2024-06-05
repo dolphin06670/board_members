@@ -15,7 +15,8 @@ def get_names(input):
     # Loop through the tagged words to find proper nouns (NNP: Proper noun, singular)
     for entity in ner: 
         if isinstance(entity, nltk.tree.Tree) and entity.label()=="PERSON":
-            name = (entity[0][0], entity[1][0])
+            print(entity)
+            name = tuple([leaf[0] for leaf in entity])
             if name!=("Title", "Age"):
                 names.append(name)
     

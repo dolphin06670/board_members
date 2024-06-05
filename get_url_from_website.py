@@ -19,7 +19,7 @@ async def get_url(company_name):
         await page.waitForSelector('#autocomplete')
 
         # Type 'Tesla' into the search bar and press Enter
-        await page.type("#autocomplete", 'Tesla')
+        await page.type("#autocomplete", company_name)
         await page.keyboard.press('Enter')
 
         # Wait for the search results to load
